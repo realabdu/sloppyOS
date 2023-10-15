@@ -1,3 +1,5 @@
 # tell boch to that the boot sector file, is inserted as a floppydesk at boot time
-floppyya: 1_44=os-image, status=inserted
+floppya: 1_44=os-image, status=inserted
 boot: a
+display_library: x
+
