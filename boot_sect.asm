@@ -1,7 +1,7 @@
 ; this is a boot sector, that helps booting a kernel in 32-bit protected mode.
 [org 0x7c00]
 
-mov ah, 0x0e
+; mov ah, 0x0e
 KERNEL_OFFSET equ 0x1000 ;memory offset of which we will load our kernel
 mov [BOOT_DRIVE], dl ;to save the value of dl register, which is the boot drive
 
