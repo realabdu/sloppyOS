@@ -18,11 +18,11 @@ call switch_to_pm ;switch to 32-bit protected mode
 jmp $
 
 ;routines
-% include "print_string.asm"
-% include "gdt.asm"
-% include "print_string_pm.asm"
-% include "switch_to_pm.asm"
-% include "disk_load.asm"
+%include "print_string.asm"
+%include "gdt.asm"
+%include "print_string_pm.asm"
+%include "switch_to_pm.asm"
+%include "disk_load.asm"
 [bits 16]
 
 load_kernel:
@@ -50,8 +50,6 @@ BOOT_DRIVE db 0
 MSG_PROT_MODE db "switched to 32-bits protected mode",0
 MSG_SWITCH_REALMODE db "loading in  16-bits realmode",0
 MSG_LOAD_KERNEL db "loading kernel", 0
-
-
 
 times 510-($-$$) db 0
 dw 0xaa55

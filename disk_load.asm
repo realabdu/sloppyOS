@@ -14,7 +14,7 @@ jc disk_error ; jump to this if error
 
 
 pop dx ; get back dx from the stack
-cmp dh,al : if al (sector read) != DH (sector expected)
+cmp dh,al ; if al (sector read) != DH (sector expected)
 jne disk_error ; display error messsage 
 
 
