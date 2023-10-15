@@ -10,8 +10,8 @@ call switch_to_pm
 
 jmp $
 
-%include "print_string.asm"
 %include "gdt.asm"
+%include "print_string.asm"
 %include "switch_to_pm.asm"
 %include "print_string_pm.asm"
 
