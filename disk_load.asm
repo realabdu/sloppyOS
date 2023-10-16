@@ -1,6 +1,7 @@
 ; load from driver DL
 
 disk_load:
+mov bx, LOADING 
 push dx ;store dx on the stack so we can retrieve it later
 mov ah, 0x02 ;bios read sector function
 mov al,dh    ;read DH sectors
@@ -24,3 +25,4 @@ call print_string ; cause this is still 16-bits realmode
 jmp $
 
 DISK_ERROR db "disk read error !",0
+LOADING db "loading disk right now",0
