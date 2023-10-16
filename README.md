@@ -11,3 +11,7 @@ I find operating systems fascinating. The technology behind them, from boot sect
 
 ## Plans
 I think I'll eventually move away from writing my own boot sector. Once I've ironed out its issues, I might just switch to GRUB or something similar. As for the kernel, I'm undecided. While I could use Linux, I'm excited about the prospect of crafting my own, even if it's just for fun. Later on, I might transition to a more established one.
+
+
+## TODOs
+- create makefile
