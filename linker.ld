@@ -1,5 +1,10 @@
+ENTRY(kmain)
 SECTIONS
 {
-    .text 0x0 : { *(.text) }
+    . = 0x1000; /* Kernel starts at 0x1000, based on your boot sector */
+
+    .text : { *(.text) }
+    .data : { *(.data) }
+    .bss  : { *(.bss)  }
 }
 
