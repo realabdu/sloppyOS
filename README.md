@@ -6,6 +6,11 @@
 # SloppyOS
 Well, it's an OS, and it's sloppy.
 
+
+## insallation
+1- you will need a cross-compiler, target OS is i686 32-bits architcture.
+
+
 ## So, how did we get here?
 I find operating systems fascinating. The technology behind them, from boot sectors to kernels, intrigues me. I want to build my own operating system, and this is my initial, albeit "sloppy", attempt.
 
