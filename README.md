@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/realabdu/sloppyOS/blob/bcaf43de9b5175123c46422b683e4cf598e5cc55/for_loyal_guest.png" />
+  <img src="https://github.com/realabdu/sloppyOS/blob/bcaf43de9b5175123c46422b683e4cf598e5cc55/logo.png" />
 </p>
 
 # SloppyOS

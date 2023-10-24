@@ -5,7 +5,6 @@ mov ah, 0x0e
 mov bx,MSG_REAL_MODE
 call print_string
 
-call switch_to_pm
 
 jmp $
 
@@ -13,7 +12,7 @@ jmp $
 %include "print_string.asm"
 %include "switch_to_pm.asm"
 %include "print_string_pm.asm"
-
+%include "print_hex.asm"
 [bits 32]
 
 BEGIN_PM:

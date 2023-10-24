@@ -35,6 +35,7 @@ load_kernel:
 disk_error:
     ; Handle disk error here
     mov bx, MSG_DISK_ERROR
+
     call print_string
     hlt
 
