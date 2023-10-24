@@ -7,7 +7,7 @@ mov ah, 0x02 ;bios read sector function
 mov al,dh    ;read DH sectors
 mov ch, 0x00 ;select cylinder 0
 mov dh, 0x00 ;select head 0
-mov cl, 0x02 ;start reading from second sector 
+mov cl, 0x01 ;start reading from second sector 
 
 int 0x13 ;bios intrrupt
 

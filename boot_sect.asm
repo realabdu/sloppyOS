@@ -29,21 +29,14 @@ jmp $
 load_kernel:
     mov bx, MSG_LOAD_KERNEL ;print that we are loading into 32-bit protected mode 
     call print_string
-    mov ax,0x0201
-    mov ch,0 ; cylinder number 
-    mov cl,2 ;sector number
-    mov dh,0 ;head number 
-    mov dl,[BOOT_DRIVE]
-    mov bx,KERNEL_OFFSET
-    int 0x13
-    mov bx, INTERIM ;print that we are loading into 32-bit protected mode 
-    call print_string
+    
     ret
+    
 disk_error:
-    ; Handle disk error here (e.g., display an error message and halt)
+    ; Handle disk error here
     mov bx, MSG_DISK_ERROR
     call print_string
-    hlt                    ; Halt the system
+    hlt
 
 MSG_DISK_ERROR db "Disk read error!", 0
 

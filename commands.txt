@@ -1,12 +1,6 @@
 nasm boot_sect.asm -f bin -o boot_sect.bin
 qemu-system-x86_64 boot_sect.bin
-gcc --ffrestanding -c test.c -o test.o
 objdump -d test.o
-ld -o test.bin -Ttext 0x0 --oformat binary text.o
-ls /opt/homebrew/bin/qemu-*
-
-
-
 
 i686-elf-gcc -ffreestanding -c kernel.c -o kernel.o
 i686-elf-ld -o kernel.bin -Ttext 0x1000 kernel.o --oformat binary
