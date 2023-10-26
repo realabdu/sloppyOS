@@ -1,11 +1,14 @@
 [org 0x7c00] 
-; mov bp, 0x9000
-; mov sp,bp
+mov bp, 0x9000
+mov sp,bp
 mov ah, 0x0e
 mov bx,MSG_REAL_MODE
 call print_string
 
+mov dx, 0x1fb7
+call print_hex
 
+call switch_to_pm
 jmp $
 
 %include "gdt.asm"

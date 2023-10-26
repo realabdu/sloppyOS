@@ -1,33 +1,39 @@
 print_hex:
-    ; Input: AL = byte value to be printed
-    ; Output: Hexadecimal representation printed to screen
-
     ; Save registers
     pusha
+    mov cx,4 ;counter to print 4 chars
+    ; full hex values lives in dx register
 
-    ; Print higher nibble
-    mov ah, 0x0E   ; Function 0Eh of int 10h: Teletype output
-    shr al, 4      ; Shift right to get higher nibble
-    call print_nibble
+char_loop:
+    dec cx ; dec one step ( one char )
+    mov ax,dx ; move dx to ax to save it later 
+    shr dx,4 ;shift right by 4 bits
+    and ax,0xf ; to get the last 4 bits
 
-    ; Print lower nibble
-    mov ah, 0x0E
-    popa           ; Restore original AL value
-    and al, 0x0F  ; Mask higher nibble
-    call print_nibble
+    mov bx,HEX_OUT
+    add bx,2
+    add bx,cx ; set the current counter to our address
 
-    ; Restore registers and return
-    popa
-    ret
+    cmp ax,0xa ; if it's a number we need to convert it to letter
+    jl set_letter
+    add al,0x27
 
-print_nibble:
-    ; Convert nibble in AL to ASCII
-    cmp al, 0x0A
-    jl .is_digit
-    add al, 'A' - 0x0A
-    jmp .done
-.is_digit:
-    add al, '0'
-.done:
-    int 0x10  ; Print character in AL
-    ret
+    jl set_letter
+
+set_letter:
+;adding 0x30 will convert number to letter 
+    add al, 0x30
+    mov byte [bx],al  ; Add the value of the byte to the char at bx
+
+    cmp cx,0          ; check the counter, compare with 0
+    je print_hex_done ; if the counter is 0, finish
+    jmp char_loop     ; otherwise, loop again
+
+print_hex_done:
+    mov bx, HEX_OUT   ; print the string pointed to by bx
+    call print_string
+
+    popa              ; pop the initial register values back from the stack
+    ret               ; return the function
+
+HEX_OUT: db '0x0000', 0
