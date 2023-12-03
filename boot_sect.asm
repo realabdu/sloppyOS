@@ -44,8 +44,8 @@ ret
 [bits 32]
 ;after switching to 32-bit protected mode we arrive here 
 BEGIN_PM:
-mov ebx, MSG_PROT_MODE
-call print_string_pm
+; mov ebx, MSG_PROT_MODE
+; call print_string_pm
 
 ; call KERNEL_OFFSET ;now we jump to the address of our loaded kernel code.
 jmp $ ;we hang and hoping that kernel is loaded

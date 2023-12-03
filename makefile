@@ -6,7 +6,7 @@ kernel.bin: boot_sect.bin
 	i686-elf-gcc -ffreestanding -c kernel.c -o kernel.o
 	i686-elf-ld -o kernel.bin -Ttext 0x9000 kernel.o --oformat binary
 boot_sect.bin:load_test.asm
-	nasm load_test.asm -f bin -o boot_sect.bin
+	nasm boot_sect.asm -f bin -o boot_sect.bin
 clean:
 	rm -f boot_sect.bin kernel.bin os-image
 
