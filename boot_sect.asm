@@ -32,7 +32,7 @@ load_kernel:
 ;
 ; mov bx, KERNEL_OFFSET ;parameters for disk_load routine so that we load the first 15 sectors
 mov bx, 0x9000 ;parameters for disk_load routine so that we load the first 15 sectors
-mov dh, 5            ; from the boot disk which is our kernel code, to address KERNEL_OFFSET
+mov dh, 0x01            ; from the boot disk which is our kernel code, to address KERNEL_OFFSET
 mov dl, [BOOT_DRIVE]
 call disk_load
 mov dx, [ 0x9000 ]
