@@ -1,6 +1,4 @@
 ; GDT = global descriptior table, resposnible of dealing with memory and segemenation
-
-
 gdt_start: ; first section
 
 gdt_null:
